@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f3ead8" />
+  <title>Little Workshop Tycoon</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Little Workshop Tycoon home"><span class="brand-mark">✿</span><span>little<span class="brand-light">workshop</span></span></a>
+      <div class="top-stats">
+        <div class="stat-pill cash"><span class="stat-icon">◉</span><span id="cash">$0</span></div>
+        <div class="stat-pill day"><span class="stat-icon">☀</span><span id="day-label">Day 1</span></div>
+        <div class="stat-pill rep"><span class="stat-icon">♥</span><span id="rep">0</span><small>rep</small></div>
+      </div>
+      <button class="icon-btn" id="sound-toggle" aria-label="Toggle sound" title="Toggle sound">♫</button>
+    </header>
+
+    <section class="game-grid">
+      <section class="market-panel panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">YOUR LITTLE CORNER OF THE WORLD</p><h1>Market day <span class="sun-doodle">✦</span></h1></div>
+          <div class="weather"><span>☀</span><div><b>Sunny & lovely</b><small>Perfect for browsing</small></div></div>
+        </div>
+        <div class="market-scene" id="market-scene">
+          <div class="scene-sky"><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="sun"></div></div>
+          <div class="string-lights">✦ ─── ✦ ─── ✦ ─── ✦</div>
+          <div class="shop-sign"><span>✿</span><b>YOUR WORKSHOP</b><small>MADE WITH LOVE</small></div>
+          <div class="shop-roof"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="shop-front">
+            <div class="window"><div class="window-glint"></div><div class="shelf"><span>🕯️</span><span>🧸</span><span>🧶</span></div><div class="window-boxes"></div></div>
+            <div class="door"><div class="door-window"></div><div class="knob"></div></div>
+            <div class="front-vine">❧</div>
+          </div>
+          <div class="awning-shadow"></div>
+          <div class="planter planter-left">🌼🌿</div><div class="planter planter-right">🌷🌱</div>
+          <div class="sidewalk"></div>
+          <div class="customer-lane" id="customer-lane" aria-live="polite"></div>
+          <div class="scene-caption"><span class="live-dot"></span><span id="market-message">Your shop is open! Make something lovely.</span></div>
+        </div>
+        <div class="market-footer"><div class="open-status"><span class="status-dot"></span><span>SHOP OPEN</span></div><div class="visitors"><span>☻</span> <b id="visitor-count">0</b> visitors today</div><button class="text-button" id="next-day">Close up for the day <span>→</span></button></div>
+      </section>
+
+      <aside class="side-column">
+        <section class="panel orders-panel">
+          <div class="section-title"><div><p class="eyebrow">THEY'RE LOOKING FOR</p><h2>Customer wishes</h2></div><span class="wish-icon">♡</span></div>
+          <div id="orders-list" class="orders-list"></div>
+        </section>
+        <section class="panel craft-panel">
+          <div class="section-title"><div><p class="eyebrow">MADE BY YOU</p><h2>Craft something</h2></div><span class="craft-icon">✂</span></div>
+          <div class="recipe-list" id="recipe-list"></div>
+          <div class="inventory-bar"><span>YOUR SUPPLIES</span><button class="text-button" id="buy-supplies">Restock <span>＋</span></button></div>
+          <div class="supplies" id="supplies"></div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="bottom-grid">
+      <section class="panel inventory-panel">
+        <div class="section-title inventory-title"><div><p class="eyebrow">READY FOR A NEW HOME</p><h2>Your little shelf <span id="stock-count" class="count-badge">0</span></h2></div><button class="sell-all" id="sell-all">Sell all <span>↗</span></button></div>
+        <div id="goods-list" class="goods-list"></div>
+      </section>
+      <section class="panel progress-panel">
+        <div class="section-title"><div><p class="eyebrow">GROW AT YOUR OWN PACE</p><h2>Workshop goals</h2></div><button class="upgrade-link" id="upgrade-open">Improve shop ↗</button></div>
+        <div id="goal-list" class="goal-list"></div>
+      </section>
+    </section>
+    <footer><span>Little Workshop Tycoon</span><span>Take your time. Make good things. ♡</span><button id="reset-game" class="reset-link">Start fresh</button></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modal-backdrop"><div class="modal panel" id="modal" role="dialog" aria-modal="true"></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
